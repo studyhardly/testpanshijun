@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>产品管理</title>
+    <script src="../static/js/bootstrap.js"></script>
+    <script src="../static/js/jquery.js"></script>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <script src="../static/js/reload.js"></script>
+
+</head>
+<body>
+<button onclick="room()">库房管理</button>
+<table class="table" id="projects">
+    <thead>
+    <th>ID</th>
+    <th>产品名</th>
+    <th>价格</th>
+    <th>供应商</th>
+    <th>更新时间</th>
+    </thead>
+    <!--<tbody th:fragment="get-response" th:id="users">-->
+    <tbody>
+    <tr th:each="pro : ${projects}">
+        <!--/*@thymesVar id="userid" type="thymeleaf"*/-->
+        <td th:text="${pro.pid}" class="pid"></td>
+        <td th:text="${pro.pname}"></td>
+        <td th:text="${pro.pprice}"></td>
+        <td th:text="${pro.pgys}"></td>
+        <td th:text="${pro.upddate}"></td>
+        <td th:text="${pro.rid}"  style="display: block" class="rid"></td>
+        <td><button onclick="del()" ></td>
+
+    </tr>
+    </tbody>
+
+</table>
+
+</body>
+</html>

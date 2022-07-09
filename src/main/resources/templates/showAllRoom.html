@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>库房管理</title>
+    <script src="../static/js/bootstrap.js"></script>
+    <script src="../static/js/jquery.js"></script>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <script src="../static/js/usercontroller.js"></script>
+    <script src="../static/js/reload1.js"></script>
+</head>
+<body>
+
+<button onclick="proj()">库房管理</button>
+<table class="table" id="projects">
+    <thead>
+    <th>ID</th>
+    <th>库房名</th>
+    <th>库存</th>
+    </thead>
+    <!--<tbody th:fragment="get-response" th:id="users">-->
+    <tbody>
+    <tr th:each="pro : ${projects}">
+        <!--/*@thymesVar id="userid" type="thymeleaf"*/-->
+        <td th:text="${pro.rid}" class="rid"></td>
+        <td th:text="${pro.rname}"></td>
+        <td th:text="${pro.rkc}"></td>
+        <td><button onclick="del1()" ></td>
+
+    </tr>
+    </tbody>
+
+</table>
+</body>
+</html>

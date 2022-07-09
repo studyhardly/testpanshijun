@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jnmc.testpanshijun.dao.UserDao">
+    <resultMap id="users" type="com.jnmc.testpanshijun.entity.User">
+        <result column="uid" property="uid" jdbcType="VARCHAR"/>
+        <result column="uname" property="uname" jdbcType="VARCHAR"/>
+        <result column="upwd" property="upwd" jdbcType="VARCHAR"/>
+        <result column="uqx" property="uqx" jdbcType="VARCHAR"/>
+    </resultMap>
+
+<select id="login" resultType="Boolean">
+    select uid from users where uname=#{uname} and upwd=#{upwd}
+</select>
+
+</mapper>
