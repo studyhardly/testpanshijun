@@ -1,4 +1,4 @@
-package com.example.testpanshijun;
+package com.jnmc.testpanshijun;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
