@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jnmc.testpanshijun.dao.RoomDao">
+
+    <resultMap id="room" type="com.jnmc.testpanshijun.entity.Room">
+        <result column="rid" property="rid" jdbcType="VARCHAR"/>
+        <result column="rname" property="rname" jdbcType="VARCHAR"/>
+        <result column="rkc" property="rkc" jdbcType="VARCHAR"/>
+    </resultMap>
+    <select id="selectAllRoom" resultMap="room">
+        select rid,rname,rkc from room
+    </select>
+    <insert id="addRoom" parameterType="com.jnmc.testpanshijun.entity.Room">
+        insert into room value (#{room.rid},#{room.rname},#{room.rkc})
+    </insert>
+    <delete id="delRoom" parameterType="String">
+        delete from
+    </delete>
+    <update id="updRoom" parameterType="com.jnmc.testpanshijun.entity.Room">
+        update room set rname=#{room.rname} where rid=#{room.rid}
+    </update>
+
+</mapper>
